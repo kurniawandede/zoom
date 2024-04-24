@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZOOM PREMIUM | 1 Bulan</title>
+    <script>
+        function generateAccount() {
+            var email = document.getElementById("email").value;
+            var password = "Zoomku123"; // Default password
+            var accountDetails = `
+Email : ${email}
+Kata Sandi : ${password}
+
+Jika muncul Two-Factor Authentication, klik "SKIP" di bawahnya. 
+
+Untuk mengakses email dan mengambil Link Cloud Recording dan fitur lainnya.
+❗Email aksesmu : https://premigu.site/${email}
+❗Data akun seperti nama, dan lainnya  bisa diubah sesuai kebutuhan pembeli
+❗Silahkan minta bantuan admin untuk mengaktifkan fitur-fitur yang belum aktif seperti co-host dan lainnya
+❗Jika ada kendala silahkan hubungi admin melalui chat Shopee
+
+Terimakasih atas pembeliannya, ditunggu pembelian selanjutnya✌️
+`;
+            document.getElementById("accountDetails").innerText = accountDetails;
+        }
+
+        function copyText() {
+            var textToCopy = document.getElementById("accountDetails").innerText;
+            navigator.clipboard.writeText(textToCopy)
+                .then(() => {
+                    alert("Teks berhasil disalin!");
+                })
+                .catch(err => {
+                    console.error('Gagal menyalin teks: ', err);
+                    alert("Tidak dapat menyalin teks. Silakan salin secara manual.");
+                });
+        }
+    </script>
+</head>
+<body>
+    <h1>ZOOM PREMIUM | 1 Bulan</h1>
+    <form>
+        <label for="email">Email :</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+        <button type="button" onclick="generateAccount()">Generate Account</button>
+    </form>
+    <div id="accountDetails"></div>
+    <button type="button" onclick="copyText()">Copy</button>
+</body>
+</html>
